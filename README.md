@@ -23,6 +23,15 @@ This is a simple example of webassembly component model.
 
 - `cd ..`
 
+- `mkdir multiplier`
+- `python3 -m venv venv`
+- `source venv/bin/activate`
+- `pip install componentize-py`
+- `mkdir wasm`
+- `componentize-py --wit-path wit/multiplier.wit --world multiplier componentize app -o wasm/multiplier.wasm`
+
+- `cd ..`
+
 - `cargo component new calculator --lib && cd calculator`
 - `cargo component build --release`
 - `wasm-tools component wit target/wasm32-wasip1/release/calculator.wasm`
