@@ -4,6 +4,7 @@ mod bindings;
 use bindings::exports::docs::calculator::calculate::{Guest, Op};
 
 use bindings::docs::adder::add::add;
+use bindings::docs::subtractor::subtract::subtract;
 
 
 struct Component;
@@ -16,6 +17,7 @@ impl Guest for Component
         match op
         {
             Op::Add => add(x, y),
+            Op::Subtract => subtract(x, y),
         }
     }
 }
