@@ -9,9 +9,9 @@ struct Component;
 
 impl Guest for Component 
 {
-    fn subtract(a: f32, b: f32) -> f32
+    fn subtract(a: f32, b: f32) -> Result<f32, String>
     {
-       a - b
+       Ok(a - b)
     }
 }
 

@@ -15,6 +15,7 @@ fn parse_operator(op: &str) -> anyhow::Result<Op>
         "add" => Ok(Op::Add),
         "subtract" => Ok(Op::Subtract),
         "multiply" => Ok(Op::Multiply),
+        "divide" => Ok(Op::Divide),
         _ => anyhow::bail!("Unknown operation: {}", op),
     }
 }
@@ -29,6 +30,7 @@ impl fmt::Display for Op
             Op::Add => write!(f, "+"),
             Op::Subtract => write!(f, "-"),
             Op::Multiply => write!(f, "*"),
+            Op::Divide => write!(f, "/"),
         }
     }
 }
@@ -54,8 +56,11 @@ impl Command
 {
     fn run(self)
     {
-        let res = calculate::eval_expression(self.op, self.x, self.y);
-        println!("{} {} {} = {res}", self.x, self.op, self.y);
+        match calculate::eval_expression(self.op, self.x, self.y)
+        {
+            Ok(res) => println!("{} {} {} = {res}", self.x, self.op, self.y),
+            Err(e) => println!("{}", e),
+        }
     }
 }
 

@@ -1,5 +1,0 @@
-python3 -m venv venv
-source venv/bin/activate
-pip install componentize-py
-
-componentize-py --wit-path wit/multiplier.wit --world multiplier componentize app -o wasm/multiplier.wasm

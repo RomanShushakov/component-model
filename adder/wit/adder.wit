@@ -2,7 +2,7 @@ package docs:adder@0.1.0;
 
 
 interface add {
-    add: func(a: f32, b: f32) -> f32;
+    add: func(a: f32, b: f32) -> result<f32, string>;
 }
 
 
