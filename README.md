@@ -32,9 +32,12 @@ This is a simple example of webassembly component model.
 
 - `cd ..`
 
-- `cargo component new divider --lib && cd divider`
-- `cargo component build --release`
-- `wasm-tools component wit target/wasm32-wasip1/release/divider.wasm`
+- `mkdir divider`
+- `python3 -m venv venv`
+- `source venv/bin/activate`
+- `pip install componentize-py`
+- `mkdir wasm`
+- `componentize-py --wit-path wit/divider.wit --world divider componentize app -o wasm/divider.wasm`
 
 - `cd ..`
 
@@ -57,9 +60,9 @@ This is a simple example of webassembly component model.
 (cd adder && cargo component build --release)
 (cd subtractor && cargo component build --release)
 (cd multiplier && python3 -m venv venv && source venv/bin/activate && pip install -r requirements.txt && componentize-py --wit-path wit/multiplier.wit --world multiplier componentize app -o wasm/multiplier.wasm)
-(cd divider && cargo component build --release)
+(cd divider && python3 -m venv venv && source venv/bin/activate && pip install -r requirements.txt && componentize-py --wit-path wit/divider.wit --world divider componentize app -o wasm/divider.wasm)
 (cd command && cargo component build --release)
-wac plug calculator/target/wasm32-wasip1/release/calculator.wasm --plug adder/target/wasm32-wasip1/release/adder.wasm --plug subtractor/target/wasm32-wasip1/release/subtractor.wasm --plug multiplier/wasm/multiplier.wasm --plug divider/target/wasm32-wasip1/release/divider.wasm -o app/composed.wasm
+wac plug calculator/target/wasm32-wasip1/release/calculator.wasm --plug adder/target/wasm32-wasip1/release/adder.wasm --plug subtractor/target/wasm32-wasip1/release/subtractor.wasm --plug multiplier/wasm/multiplier.wasm --plug divider/wasm/divider.wasm -o app/composed.wasm
 wac plug command/target/wasm32-wasip1/release/command.wasm --plug app/composed.wasm -o app/app.wasm`
 
 - `wasmtime run app/app.wasm 1 2.5 add`
