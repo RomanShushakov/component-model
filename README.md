@@ -17,6 +17,12 @@ This is a simple example of webassembly component model.
 
 - `cd ..`
 
+- `cargo component new subtractor --lib && cd subtractor`
+- `cargo component build --release`
+- `wasm-tools component wit target/wasm32-wasip1/release/subtractor.wasm`
+
+- `cd ..`
+
 - `cargo component new calculator --lib && cd calculator`
 - `cargo component build --release`
 - `wasm-tools component wit target/wasm32-wasip1/release/calculator.wasm`
@@ -34,8 +40,10 @@ This is a simple example of webassembly component model.
 
 - `(cd calculator && cargo component build --release)
 (cd adder && cargo component build --release)
+(cd subtractor && cargo component build --release)
 (cd command && cargo component build --release)
-wac plug calculator/target/wasm32-wasip1/release/calculator.wasm --plug adder/target/wasm32-wasip1/release/adder.wasm -o app/composed.wasm
+wac plug calculator/target/wasm32-wasip1/release/calculator.wasm --plug adder/target/wasm32-wasip1/release/adder.wasm --plug subtractor/target/wasm32-wasip1/release/subtractor.wasm -o app/composed.wasm
 wac plug command/target/wasm32-wasip1/release/command.wasm --plug app/composed.wasm -o app/app.wasm`
 
-`wasmtime run app/app.wasm 1 2.5 add`
+- `wasmtime run app/app.wasm 1 2.5 add`
+- `wasmtime run app/app.wasm 1 2.5 subtract`

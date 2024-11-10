@@ -1,5 +1,5 @@
 [package]
-name = "calculator"
+name = "subtractor"
 version = "0.1.0"
 edition = "2021"
 
@@ -21,17 +21,12 @@ lto = true
 
 
 [package.metadata.component]
-package = "docs:calculator"
-
-
-[package.metadata.component.target.dependencies]
-"docs:adder" = { path = "../adder/wit/adder.wit" }
-"docs:subtractor" = { path = "../subtractor/wit/subtractor.wit" }
+package = "docs:subtractor"
 
 
 [package.metadata.component.dependencies]
 
 
 [package.metadata.component.target]
-path = "./wit/calculator.wit"
-world = "calculator"
+path = "./wit/subtractor.wit"
+world = "subtractor"
