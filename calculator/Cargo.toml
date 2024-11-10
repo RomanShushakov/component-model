@@ -27,6 +27,7 @@ package = "docs:calculator"
 [package.metadata.component.target.dependencies]
 "docs:adder" = { path = "../adder/wit/adder.wit" }
 "docs:subtractor" = { path = "../subtractor/wit/subtractor.wit" }
+"docs:multiplier" = { path = "../multiplier/wit/multiplier.wit" }
 
 
 [package.metadata.component.dependencies]
