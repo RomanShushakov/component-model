@@ -5,6 +5,7 @@ use bindings::exports::docs::calculator::calculate::{Guest, Op};
 
 use bindings::docs::adder::add::add;
 use bindings::docs::subtractor::subtract::subtract;
+use bindings::docs::multiplier::multiply::multiply;
 
 
 struct Component;
@@ -18,6 +19,7 @@ impl Guest for Component
         {
             Op::Add => add(x, y),
             Op::Subtract => subtract(x, y),
+            Op::Multiply => multiply(x, y),
         }
     }
 }

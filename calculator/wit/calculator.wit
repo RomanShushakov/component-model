@@ -4,6 +4,7 @@ interface calculate {
     enum op {
         add,
         subtract,
+        multiply,
     }
     eval-expression: func(op: op, x: f32, y: f32) -> f32;
 }
@@ -12,6 +13,7 @@ world calculator {
     export calculate;
     import docs:adder/add@0.1.0;
     import docs:subtractor/subtract@0.1.0;
+    import docs:multiplier/multiply@0.1.0;
 }
 
 world app {

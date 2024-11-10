@@ -14,6 +14,7 @@ fn parse_operator(op: &str) -> anyhow::Result<Op>
     {
         "add" => Ok(Op::Add),
         "subtract" => Ok(Op::Subtract),
+        "multiply" => Ok(Op::Multiply),
         _ => anyhow::bail!("Unknown operation: {}", op),
     }
 }
@@ -27,6 +28,7 @@ impl fmt::Display for Op
         {
             Op::Add => write!(f, "+"),
             Op::Subtract => write!(f, "-"),
+            Op::Multiply => write!(f, "*"),
         }
     }
 }
