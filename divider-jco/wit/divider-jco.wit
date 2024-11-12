@@ -1,0 +1,11 @@
+package docs:divider-jco@0.1.0;
+
+
+interface divide-jco {
+    divide-jco: func(a: f32, b: f32) -> result<f32, string>;
+}
+
+
+world divider-jco {
+    export divide-jco;
+}

@@ -7,6 +7,7 @@ use bindings::docs::adder::add::add;
 use bindings::docs::subtractor::subtract::subtract;
 use bindings::docs::multiplier::multiply::multiply;
 use bindings::docs::divider::divide::divide;
+use bindings::docs::divider_jco::divide_jco::divide_jco;
 
 
 struct Component;
@@ -22,6 +23,7 @@ impl Guest for Component
             Op::Subtract => subtract(x, y),
             Op::Multiply => multiply(x, y),
             Op::Divide => divide(x, y),
+            Op::DivideJco => divide_jco(x, y),
         }
     }
 }

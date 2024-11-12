@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@bytecodealliance/componentize-js": "0.14.0",
+    "@bytecodealliance/jco": "1.7.2"
+  }
+}

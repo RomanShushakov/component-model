@@ -6,6 +6,7 @@ interface calculate {
         subtract,
         multiply,
         divide,
+        divide-jco,
     }
     eval-expression: func(op: op, x: f32, y: f32) -> result<f32, string>;
 }
@@ -16,6 +17,7 @@ world calculator {
     import docs:subtractor/subtract@0.1.0;
     import docs:multiplier/multiply@0.1.0;
     import docs:divider/divide@0.1.0;
+    import docs:divider-jco/divide-jco@0.1.0;
 }
 
 world app {

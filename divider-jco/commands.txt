@@ -1,0 +1,10 @@
+npm install @bytecodealliance/jco
+npm install @bytecodealliance/componentize-js
+
+
+npx jco componentize \
+    divider-jco.js \
+    --wit wit/divider-jco.wit \
+    --world-name divider-jco \
+    --out wasm/divider-jco.wasm \
+    --disable all

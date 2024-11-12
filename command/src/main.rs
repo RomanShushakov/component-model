@@ -16,6 +16,7 @@ fn parse_operator(op: &str) -> anyhow::Result<Op>
         "subtract" => Ok(Op::Subtract),
         "multiply" => Ok(Op::Multiply),
         "divide" => Ok(Op::Divide),
+        "divide-jco" => Ok(Op::DivideJco),
         _ => anyhow::bail!("Unknown operation: {}", op),
     }
 }
@@ -31,6 +32,7 @@ impl fmt::Display for Op
             Op::Subtract => write!(f, "-"),
             Op::Multiply => write!(f, "*"),
             Op::Divide => write!(f, "/"),
+            Op::DivideJco => write!(f, "/"),
         }
     }
 }

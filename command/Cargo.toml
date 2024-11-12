@@ -31,3 +31,4 @@ world = "app"
 "docs:subtractor" = { path = "../subtractor/wit/subtractor.wit" }
 "docs:multiplier" = { path = "../multiplier/wit/multiplier.wit" }
 "docs:divider" = { path = "../divider/wit/divider.wit" }
+"docs:divider-jco" = { path = "../divider-jco/wit/divider-jco.wit" }
